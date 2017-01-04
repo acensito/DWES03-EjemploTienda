@@ -25,7 +25,7 @@
     <h1>Listado de productos</h1>
   </div>
   <div id="cesta">
-    <h3><img src="cesta.png" alt="Cesta" width="24" height="21"> Cesta</h3>
+    <h3><img src="cesta.jpg" alt="Cesta" width="24" height="21"> Cesta</h3>
     <hr />
 <?php
     // Comprobamos si se ha enviado el formulario de vaciar la cesta
@@ -58,12 +58,12 @@
 ?>
     <form id='vaciar' action='productos.php' method='post'>
         <input type='submit' name='vaciar' value='Vaciar Cesta' 
-            <?php if ($cesta_vacia) print "disabled='true'"; ?>
+            <?php if($cesta_vacia) { print "disabled='true'"; } ?>
         />
     </form>
     <form id='comprar' action='cesta.php' method='post'>
         <input type='submit' name='comprar' value='Comprar' 
-            <?php if ($cesta_vacia) print "disabled='true'"; ?>
+            <?php if($cesta_vacia) { print "disabled='true'"; } ?>
         />
     </form>
   </div>
@@ -71,8 +71,8 @@
 <?php
     try {
         $opc = array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8");
-        $dsn = "mysql:host=192.168.0.250;dbname=dwes";
-        $dwes = new PDO($dsn, "dwes", "dwes", $opc);
+        $dsn = "mysql:host=localhost;dbname=ejtienda";
+        $dwes = new PDO($dsn, "admintienda", "admintienda", $opc);
     }
     catch (PDOException $e) {
         $error = $e->getCode();

@@ -39,7 +39,7 @@ CREATE TABLE `ejtienda`.`usuarios` (
 
 -- Insertamos el usuario de la tienda dwes
 INSERT INTO `ejtienda`.`usuarios` (usuario, contrasena) VALUES
-('dwes', 'e8dc8ccd5e5f9e3a54f07350ce8a2d3d');
+('dwes', 'dwes');
 
 -- Creamos las claves foráneas
 ALTER TABLE `producto`
@@ -56,6 +56,7 @@ ON UPDATE CASCADE;
 
 -- Creamos el usuario de la base de datos
 CREATE USER 'admintienda'@'%' IDENTIFIED BY 'admintienda';
+CREATE USER 'admintienda'@'localhost' IDENTIFIED BY 'admintienda';
 
 -- Asignamos permisos al usuario
 GRANT ALL ON `ejtienda`.*
