@@ -1,4 +1,4 @@
-#EJEMPLO TIENDA
+## EJEMPLO TIENDA
 
 Este es un ejemplo de utilización de sesiones para almacenar la información del usuario.
 
